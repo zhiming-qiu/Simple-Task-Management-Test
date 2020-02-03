@@ -9,5 +9,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Run a one-line script
-      run: ./setup.sh
+    - name: test
+      run: |
+        ./setup.sh
+        ./test.sh
+        ./teardown.sh
