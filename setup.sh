@@ -4,4 +4,6 @@ cd Simple-Task-Management-Web-Server
 python -m SimpleHTTPServer 8000 &
 wspid="$!"
 echo $wspid > wspid
+ls
+cat wspid
 sleep 10
