@@ -1,2 +1,4 @@
 #!/bin/sh
-echo "Test!"
+echo "========================"
+echo "Your UI tests go here!!!"
+echo "========================"
