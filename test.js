@@ -3,11 +3,13 @@ var webdriver = require("selenium-webdriver"),
 SeleniumServer = require("selenium-webdriver/remote").SeleniumServer;
 var chrome = require("selenium-webdriver/chrome");
 
+var chromeOptions = webdriver.chromeOptions();
+chromeOptions.addArguments(['--headless', '--no-sandbox', '--disable-dev-shm-usage']);
 var driver = new webdriver.Builder()
     .forBrowser('chrome')
+    .setChromeOptions(chromeOptions)
     .withCapabilities({
-        'browserName' : 'chrome',
-        chromeOptions: {args: ['--headless', '--no-sandbox', '--disable-dev-shm-usage']}})
+        'browserName' : 'chrome'})
     .build();
 
 driver.get("http://127.0.0.1:8000");
