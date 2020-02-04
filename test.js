@@ -7,7 +7,7 @@ var driver = new webdriver.Builder()
     .forBrowser('chrome')
     .withCapabilities({
         'browserName' : 'chrome',
-        chromeOptions: {args: ['--disable-gpu', '--no-sandbox', '--disable-extensions', '--disable-dev-shm-usage']}})
+        chromeOptions: {args: ['--headless', '--no-sandbox', '--disable-dev-shm-usage']}})
     .build();
 
 driver.get("http://127.0.0.1:8000");
