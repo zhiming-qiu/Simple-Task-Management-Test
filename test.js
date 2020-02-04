@@ -3,7 +3,7 @@ var webdriver = require("selenium-webdriver"),
 SeleniumServer = require("selenium-webdriver/remote").SeleniumServer;
 var chrome = require("selenium-webdriver/chrome");
 
-var chromeOptions = webdriver.chromeOptions();
+var chromeOptions = new chrome.Options();
 chromeOptions.addArguments(['--headless', '--no-sandbox', '--disable-dev-shm-usage']);
 var driver = new webdriver.Builder()
     .forBrowser('chrome')
