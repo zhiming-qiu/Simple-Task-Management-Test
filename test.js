@@ -1,4 +1,5 @@
 "use strict"; 
+var assert = require('assert');
 var webdriver = require("selenium-webdriver"),
 SeleniumServer = require("selenium-webdriver/remote").SeleniumServer;
 var chrome = require("selenium-webdriver/chrome");
@@ -14,6 +15,6 @@ var driver = new webdriver.Builder()
 
 driver.get("http://127.0.0.1:8000");
 driver.getTitle().then(function(title){
-    // console.log(title);
+    console.log(title);
     assert(title === 'STMWS');
 });
