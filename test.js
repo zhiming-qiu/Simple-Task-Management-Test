@@ -14,7 +14,21 @@ var driver = new webdriver.Builder()
     .build();
 
 driver.get("http://127.0.0.1:8000");
-driver.getTitle().then(function(title){
-    console.log(title);
-    assert(title === 'STMWS');
+// driver.getTitle().then(function(title){
+//     console.log("=======");
+//     console.log(title);
+//     assert(title === 'STMWS');
+// });
+// driver.wait(until.elementLocated(By.id('list')), 10000).then(function(button) {
+//     button.click();
+// });
+driver.findElement({id: 'list'}).click();
+driver.findElements({id: 'tasks'}).then(function(elements) {
+    // console.log(elements.length);
+    elements[1].getText().then(function(text) {
+        console.log(text);
+    });
 });
+// driver.findElements({id: 'tasks'})[1].getText().then(function(s){
+//     console.log(s);
+// });
